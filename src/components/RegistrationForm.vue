@@ -16,7 +16,7 @@ const submit = () => {
 </script>
 
 <template>
-  <div class="flex max-w-screen-xl mx-auto shadow-md">
+  <div class="flex max-w-screen-md mx-auto shadow-md rounded-lg">
     <div class="flex items-center w-1/3 bg-cyan-500 p-8 rounded-l-lg">
       <div>
         <p class="text-3xl font-bold text-white pb-4">KÍNH MỜI</p>
