@@ -6,7 +6,7 @@ import RegistrationSection from "./components/RegistrationSection.vue";
 import NavBar from "./components/NavBar.vue";
 
 import EventSection from "./components/EventSection.vue";
-import {onMounted, ref} from "vue";
+import { onMounted, ref } from "vue";
 
 const locationHash = ref("");
 
@@ -14,34 +14,36 @@ function changeLocationHash() {
   let sections = Array.from(document.querySelectorAll("section"));
   const section = sections.find((s) => {
     const rect = s.getBoundingClientRect();
-    return rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
-  })
-  window.location.hash = section.id
-  locationHash.value = window.location.hash
+    return (
+      rect.top <= window.innerHeight / 2 &&
+      rect.bottom >= window.innerHeight / 2
+    );
+  });
+  window.location.hash = section.id;
+  locationHash.value = window.location.hash;
 }
 
-onMounted(changeLocationHash)
-window.addEventListener('scroll', changeLocationHash)
+onMounted(changeLocationHash);
+window.addEventListener("scroll", changeLocationHash);
 </script>
 
 <template>
-  <NavBar :location-hash="locationHash"/>
+  <NavBar :location-hash="locationHash" />
   <section id="carousel">
-    <CarouselSection/>
+    <CarouselSection />
   </section>
   <section id="event">
-    <EventSection/>
+    <EventSection />
   </section>
   <section id="registration">
-    <RegistrationSection/>
+    <RegistrationSection />
   </section>
   <section id="gift">
-    <GiftSection/>
+    <GiftSection />
   </section>
   <section id="thank-you">
-    <ThankYouSection/>
+    <ThankYouSection />
   </section>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

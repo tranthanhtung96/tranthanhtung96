@@ -1,42 +1,51 @@
 <script setup>
-import {HeartIcon} from '@heroicons/vue/24/outline';
-import {EffectFade, Navigation, Pagination} from 'swiper/modules';
-import {Swiper, SwiperSlide} from 'swiper/vue';
-import 'swiper/css';
-import 'swiper/css/pagination'
-import 'swiper/css/navigation'
-import 'swiper/css/effect-fade'
+import { HeartIcon } from "@heroicons/vue/24/outline";
+import { EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-fade";
 
-const modules = [Pagination, Navigation, EffectFade]
+const modules = [Pagination, Navigation, EffectFade];
 </script>
 
 <template>
   <div class="relative">
     <swiper
-        class="max-h-[800px] min-h-[600px] z-0 opacity-70"
-        :modules="modules"
-        :space-between="30"
-        :effect="'fade'"
-        :navigation="true"
-        :pagination="{ clickable: true }"
+      effect="fade"
+      :modules="modules"
+      :navigation="true"
+      :pagination="{ clickable: true }"
+      :space-between="30"
+      class="z-0 max-h-[800px] min-h-[600px] opacity-70"
     >
       <swiper-slide v-for="index in [1, 2]" :key="index">
-        <img class="object-cover min-h-[600px] block" :src="`/carousel-${index}.jpg`" :alt="index"/>
+        <img
+          :alt="index"
+          :src="`/carousel-${index}.jpg`"
+          class="block min-h-[600px] object-cover"
+        />
       </swiper-slide>
     </swiper>
-    <div class="absolute inset-0 text-gray-800 flex justify-center items-center z-10 pointer-events-none">
+    <div
+      class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center text-gray-800"
+    >
       <div class="">
-        <div class="xl:text-6xl lg:text-5xl text-4xl font-dancing pb-6 flex flex-col sm:flex-row justify-center items-center gap-2">
+        <div
+          class="flex flex-col items-center justify-center gap-2 pb-6 font-dancing text-4xl sm:flex-row lg:text-5xl xl:text-6xl"
+        >
           <div>Thu Thủy</div>
           <div>
-            <HeartIcon class="h-8 w-8 sm:h-10 sm:w-10 text-rose-400"/>
+            <HeartIcon class="h-8 w-8 text-rose-400 sm:h-10 sm:w-10" />
           </div>
           <div>Thanh Tùng</div>
         </div>
-        <div class="xl:text-xl lg:text-lg text-md font-poppins text-center">
+        <div class="text-md text-center font-poppins lg:text-lg xl:text-xl">
           <span class="tracking-tighter">&#x2015;&#x2015;</span>
           <span class="mx-3">30-31 Tháng 12 Năm 2023</span>
-          <span class="tracking-tighter">&#x2015;&#x2015;</span></div>
+          <span class="tracking-tighter">&#x2015;&#x2015;</span>
+        </div>
       </div>
     </div>
   </div>

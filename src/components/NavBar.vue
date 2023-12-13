@@ -1,40 +1,65 @@
 <script setup>
-import {ref} from 'vue'
+import { ref } from "vue";
 import NavBarAnchor from "./NavBarAnchor.vue";
 
 defineProps({
-  locationHash: String
-})
+  locationHash: String,
+});
 
-const navbarStickyHidden = ref(true)
+const navbarStickyHidden = ref(true);
 const sections = [
-  {link: "#carousel", title: "Home"},
-  {link: "#event", title: "Sự kiện cưới"},
-  {link: "#registration", title: "Đăng ký xe"},
-  {link: "#gift", title: "Mừng cưới"},
-  {link: "#thank-you", title: "Lời cảm ơn"},
-]
+  { link: "#carousel", title: "Home" },
+  { link: "#event", title: "Sự kiện cưới" },
+  { link: "#registration", title: "Đăng ký xe" },
+  { link: "#gift", title: "Mừng cưới" },
+  { link: "#thank-you", title: "Lời cảm ơn" },
+];
 
 function toggleNavBarSticky() {
-  navbarStickyHidden.value = !navbarStickyHidden.value
+  navbarStickyHidden.value = !navbarStickyHidden.value;
 }
 </script>
 
 <template>
-  <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
-    <div class="max-w-screen-xl flex flex-wrap items-center md:justify-center mx-auto p-2">
-      <button class="inline-flex items-center p-2 w-8 h-8 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-              @click="toggleNavBarSticky">
-        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M1 1h15M1 7h15M1 13h15"/>
+  <nav
+    class="fixed start-0 top-0 z-20 w-full border-b border-gray-200 bg-white"
+  >
+    <div
+      class="mx-auto flex max-w-screen-xl flex-wrap items-center p-2 md:justify-center"
+    >
+      <button
+        class="inline-flex h-8 w-8 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
+        @click="toggleNavBarSticky"
+      >
+        <svg
+          class="h-4 w-4"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"
+          />
         </svg>
       </button>
-      <div class="items-center justify-between w-full md:flex md:w-auto md:order-1"
-           :class="{hidden: navbarStickyHidden}" id="navbar-sticky">
-        <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white ">
+      <div
+        class="w-full items-center justify-between md:order-1 md:flex md:w-auto"
+        :class="{ hidden: navbarStickyHidden }"
+        id="navbar-sticky"
+      >
+        <ul
+          class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 font-medium rtl:space-x-reverse md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0"
+        >
           <li v-for="section in sections">
-            <NavBarAnchor :link="section.link" :title="section.title" :locationHash="locationHash"/>
+            <NavBarAnchor
+              :link="section.link"
+              :title="section.title"
+              :locationHash="locationHash"
+            />
           </li>
         </ul>
       </div>
