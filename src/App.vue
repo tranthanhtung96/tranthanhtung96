@@ -19,8 +19,7 @@ function changeLocationHash() {
       rect.bottom >= window.innerHeight / 2
     );
   });
-  window.location.hash = section.id;
-  locationHash.value = window.location.hash;
+  locationHash.value = `#${section.id}`;
 }
 
 onMounted(changeLocationHash);

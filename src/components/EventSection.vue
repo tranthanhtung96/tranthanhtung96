@@ -1,26 +1,25 @@
 <script setup>
 import EventDetail from "./EventDetail.vue";
 import EventCalendar from "./EventCalendar.vue";
+import SectionHeader from "./SectionHeader.vue";
 </script>
 
 <template>
-  <div class="flex flex-col items-center justify-center py-24">
-    <div class="pb-4 text-center font-dancing text-6xl">Sự kiện cưới</div>
-    <div class="w-2/3 pb-10 text-center font-comfort text-2xl">
+  <div class="flex flex-col items-center justify-center py-16 md:py-24">
+    <SectionHeader title="Sự kiện cưới">
       ...tình yêu không phải là nhìn chằm chằm vào nhau, mà là nhìn chằm chằm về
       cùng một hướng...
-    </div>
-    <EventCalendar class="mb-10 flex md:hidden" />
+    </SectionHeader>
     <div class="flex flex-col gap-4 md:flex-row md:justify-center">
       <EventDetail
         address="Nhà hàng Chen, 300 Trường Chinh, Vị Xuyên, tp. Nam Định"
-        class="md:basis-[20%]"
+        class="order-0 md:order-first md:basis-[20%]"
         img-src="/nam-dinh.png"
         maps-url="https://www.google.com/maps/place/Nh%C3%A0+h%C3%A0ng+Chen+1/@20.4377077,106.1802895,21z/data=!4m6!3m5!1s0x3135e7c87788ca69:0x553429ab6b0b85e3!8m2!3d20.4378655!4d106.1805004!16s%2Fg%2F11gxtl5rx9?entry=ttu"
         time="16:30 31/12/2023"
         title="TIỆC CƯỚI NHÀ CHÚ RỂ"
       />
-      <EventCalendar class="hidden basis-[60%] md:flex" />
+      <EventCalendar class="md:order-0 order-first basis-[60%]" />
       <EventDetail
         address="Xóm 4, Phương Châu, Phú Phương, Ba Vì, tp. Hà Nội"
         class="md:basis-[20%]"

@@ -1,9 +1,12 @@
 <template>
-  <div class="flex w-full flex-col items-center justify-center bg-[#F2EDED]">
-    <img alt="flower" class="pt-20" src="/sec-title-flower.png" />
-    <h1 class="pb-10 text-center font-dancing text-5xl font-bold">Mừng cưới</h1>
+  <div
+    class="flex w-full flex-col items-center justify-center bg-[#F2EDED] py-16 md:py-24"
+  >
+    <SectionHeader title="Mừng cưới">
+      Cuộc đời anh vốn một đường thẳng tắp, chỉ vì gặp gỡ em mà rẽ ngang.
+    </SectionHeader>
     <div
-      class="flex flex-col items-center justify-center gap-y-5 pb-20 md:flex-row md:gap-x-10"
+      class="flex flex-col items-center justify-center gap-y-5 md:flex-row md:gap-x-10"
     >
       <div
         v-for="item in [1, 2]"
@@ -19,4 +22,6 @@
     </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import SectionHeader from "./SectionHeader.vue";
+</script>

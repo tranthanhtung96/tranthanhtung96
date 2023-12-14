@@ -33,7 +33,7 @@ const modules = [Pagination, Navigation, EffectFade];
     >
       <div class="">
         <div
-          class="flex flex-col items-center justify-center gap-2 pb-6 font-dancing text-4xl sm:flex-row lg:text-5xl xl:text-6xl"
+          class="flex flex-col items-center justify-center gap-2 pb-6 font-dancing text-5xl sm:flex-row lg:text-6xl xl:text-6xl"
         >
           <div>Thu Thủy</div>
           <div>

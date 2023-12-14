@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from "vue";
+import SectionHeader from "./SectionHeader.vue";
 
 const registration = ref({
   name: "",
@@ -15,9 +16,12 @@ const submit = () => {
 
 <template>
   <div
-    class="flex flex-col items-center justify-center gap-6 bg-[url('/confetti.png')] bg-repeat-x pb-24 pt-20"
+    class="flex flex-col items-center justify-center bg-[url('/confetti.png')] bg-repeat-x py-16 md:py-24"
   >
-    <div class="text-center font-dancing text-5xl sm:text-6xl">Đăng ký xe</div>
+    <SectionHeader title="Đăng ký xe">
+      Nếu khoảng cách giữa đôi ta là 1000 bước, em chỉ cần bước một còn anh sẽ
+      bước 999 bước còn lại.
+    </SectionHeader>
     <div
       class="flex max-w-screen-sm flex-col rounded-xl px-4 font-comfort sm:flex-row"
     >

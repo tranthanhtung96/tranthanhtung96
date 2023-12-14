@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import NavBarAnchor from "./NavBarAnchor.vue";
+import { HeartIcon } from "@heroicons/vue/24/solid";
 
 defineProps({
   locationHash: String,
@@ -25,8 +26,15 @@ function toggleNavBarSticky() {
     class="fixed start-0 top-0 z-20 w-full border-b border-gray-200 bg-white"
   >
     <div
-      class="mx-auto flex max-w-screen-xl flex-wrap items-center p-2 md:justify-center"
+      class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-2"
     >
+      <div
+        class="flex flex-row items-center justify-center gap-1 font-dancing font-bold"
+      >
+        <div>TT</div>
+        <HeartIcon class="h-5 w-5 text-red-400" />
+        <div>TT</div>
+      </div>
       <button
         class="inline-flex h-8 w-8 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
         @click="toggleNavBarSticky"
@@ -47,7 +55,7 @@ function toggleNavBarSticky() {
         </svg>
       </button>
       <div
-        class="w-full items-center justify-between md:order-1 md:flex md:w-auto"
+        class="w-full items-center justify-between md:flex md:w-auto"
         :class="{ hidden: navbarStickyHidden }"
         id="navbar-sticky"
       >
@@ -63,6 +71,7 @@ function toggleNavBarSticky() {
           </li>
         </ul>
       </div>
+      <div class="order-first w-10 md:order-last" />
     </div>
   </nav>
 </template>
