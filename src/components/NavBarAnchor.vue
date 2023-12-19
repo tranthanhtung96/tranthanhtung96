@@ -4,10 +4,12 @@ defineProps({
   title: String,
   locationHash: String,
 });
+defineEmits(['hideAnchors'])
 </script>
 
 <template>
   <a
+    @click="$emit('hideAnchors')"
     :href="link"
     class="block px-3 py-2 font-comfort font-bold"
     :class="

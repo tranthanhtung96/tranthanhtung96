@@ -61,6 +61,7 @@ function toggleNavBarSticky() {
         >
           <li v-for="section in sections">
             <NavBarAnchor
+              @hide-anchors="toggleNavBarSticky"
               :link="section.link"
               :title="section.title"
               :locationHash="locationHash"

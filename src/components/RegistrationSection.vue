@@ -66,7 +66,7 @@ const submit = async () => {
           </tr>
 
           <tr class="items-center">
-            <th class="pr-4 text-right text-gray-800">Đăng ký mấy người</th>
+            <th class="pr-4 text-right text-gray-800">Số lượng</th>
             <th>
               <input
                 type="number"
