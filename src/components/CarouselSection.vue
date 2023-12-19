@@ -1,13 +1,13 @@
 <script setup>
 import { HeartIcon } from "@heroicons/vue/24/outline";
-import { EffectFade, Navigation, Pagination } from "swiper/modules";
+import { Autoplay, EffectFade, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
-const modules = [Pagination, Navigation, EffectFade];
+const modules = [Pagination, Navigation, EffectFade, Autoplay];
 </script>
 
 <template>
@@ -18,6 +18,10 @@ const modules = [Pagination, Navigation, EffectFade];
       :navigation="true"
       :pagination="{ clickable: true }"
       :space-between="30"
+      :autoplay="{
+        delay: 2500,
+        disableOnInteraction: false,
+      }"
       class="z-0 max-h-[800px] min-h-[600px] opacity-70"
     >
       <swiper-slide v-for="index in [1, 2]" :key="index">

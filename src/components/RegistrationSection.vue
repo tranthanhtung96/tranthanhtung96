@@ -91,7 +91,7 @@ const submit = async () => {
                     class="border-rose mr-3 h-4 w-4 accent-rose-300 ring-rose-300"
                     v-model="registration.bride"
                   />
-                  <div class="text-gray-800">Cô dâu</div>
+                  <div class="text-gray-800 mt-0.5">Cô dâu</div>
                 </div>
 
                 <div
@@ -102,7 +102,7 @@ const submit = async () => {
                     class="border-rose mr-3 h-4 w-4 accent-rose-300"
                     v-model="registration.groom"
                   />
-                  <div class="text-gray-800">Chú rể</div>
+                  <div class="text-gray-800 mt-0.5">Chú rể</div>
                 </div>
               </div>
             </th>
