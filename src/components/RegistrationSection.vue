@@ -1,7 +1,8 @@
 <script setup>
 import { ref } from "vue";
 import SectionHeader from "./SectionHeader.vue";
-import axios from "axios";
+
+import { register } from "../scripts/api.js";
 
 const registration = ref({
   name: "",
@@ -11,13 +12,10 @@ const registration = ref({
   groom: false,
 });
 
+const isButtonDisabled = ref(false);
+
 const submit = async () => {
-  const resp = await axios.post(
-    // "https://shiny-melomakarona-dee082.netlify.app/.netlify/functions/register",
-    "http://localhost:8888/.netlify/functions/register",
-    registration.value,
-  );
-  console.log(resp)
+  isButtonDisabled.value = await register(registration.value);
 };
 </script>
 
@@ -26,8 +24,8 @@ const submit = async () => {
     class="flex flex-col items-center justify-center bg-[#F2EDED] bg-opacity-50 py-16 md:py-24"
   >
     <SectionHeader title="Đăng ký xe">
-      Nếu khoảng cách giữa đôi ta là 1000 bước, em chỉ cần bước một còn anh sẽ
-      bước 999 bước còn lại.
+      ...nếu khoảng cách giữa đôi ta là 1000 bước, em chỉ cần bước 1 bước còn anh sẽ
+      bước 999 bước còn lại...
     </SectionHeader>
     <div
       class="flex max-w-screen-sm flex-col rounded-xl px-4 font-comfort sm:flex-row"
@@ -35,7 +33,8 @@ const submit = async () => {
       <div
         class="rounded-b-none rounded-t-xl bg-rose-300 p-8 text-xl text-white sm:w-1/3 sm:rounded-l-xl sm:rounded-r-none"
       >
-        Mọi người muốn đăng ký xe từ Hà Nội về đám cưới thì điền form này ạ.
+        Để tiện cho gia đình cô dâu và chú rể chuẩn bị xe, mong
+        anh/chị/bạn bớt chút thời gian điền vào form này ạ
       </div>
 
       <div
@@ -109,8 +108,14 @@ const submit = async () => {
             </th>
           </tr>
         </table>
+        <div
+          class="text-md text-red-700"
+          :class="isButtonDisabled ? 'inline' : 'hidden'"
+        >
+          Đăng ký thành công!
+        </div>
         <button
-          class="w-3/4 rounded-md bg-rose-300 p-2 font-bold text-white hover:bg-rose-600"
+          class="w-3/4 rounded-md bg-rose-300 p-2 font-bold text-white hover:bg-rose-600 disabled:bg-gray-300" :disabled="isButtonDisabled"
           v-on:click="submit"
         >
           ĐĂNG KÝ

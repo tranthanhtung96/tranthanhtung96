@@ -1,7 +1,6 @@
 <script setup>
 import { ref } from "vue";
 import NavBarAnchor from "./NavBarAnchor.vue";
-import { HeartIcon } from "@heroicons/vue/24/solid";
 
 defineProps({
   locationHash: String,
@@ -31,9 +30,7 @@ function toggleNavBarSticky() {
       <div
         class="flex flex-row items-center justify-center gap-1 font-dancing font-bold"
       >
-        <div>TT</div>
-        <HeartIcon class="h-5 w-5 text-red-400" />
-        <div>TT</div>
+        <img class="h-9 w-9" alt="happy" src="/happiness.png" />
       </div>
       <button
         class="inline-flex h-8 w-8 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"

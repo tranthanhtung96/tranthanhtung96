@@ -8,6 +8,8 @@ import NavBar from "./components/NavBar.vue";
 import EventSection from "./components/EventSection.vue";
 import { onMounted, ref } from "vue";
 
+import { login } from "./scripts/api.js";
+
 const locationHash = ref("");
 
 function changeLocationHash() {
@@ -22,8 +24,11 @@ function changeLocationHash() {
   locationHash.value = `#${section.id}`;
 }
 
-onMounted(changeLocationHash);
-window.addEventListener("scroll", changeLocationHash);
+onMounted(async () => {
+  changeLocationHash();
+  window.addEventListener("scroll", changeLocationHash);
+  await login();
+});
 </script>
 
 <template>
