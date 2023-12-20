@@ -8,7 +8,7 @@ import { DevicePhoneMobileIcon } from "@heroicons/vue/24/outline";
   >
     <img
       class="h-72 w-72 rounded-full sm:h-[32rem] sm:w-[32rem]"
-      src="/thank-you.png"
+      src="/thank-you.jpg"
       alt="thank you"
     />
     <div class="font-dancing text-5xl sm:text-6xl">Thank you!</div>

@@ -10,7 +10,7 @@ defineProps({
 
 <template>
   <div
-    class="flex max-w-sm flex-col items-center gap-4 bg-[url('/event-bg.png')] p-5 shadow-2xl"
+    class="flex max-w-sm flex-col items-center gap-4 bg-[url('/event-bg.jpg')] p-5 shadow-2xl"
   >
     <div class="text-center font-comfort text-2xl">{{ title }}</div>
     <img :alt="imgSrc" :src="imgSrc" class="max-w-[13rem] rounded-full" />
